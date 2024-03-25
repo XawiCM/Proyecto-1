@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Eres gay?</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffe6e6; /* Color de fondo rosa más pálido */
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    height: 100vh; /* Altura de la pantalla completa */
+  }
+
+  #mensaje {
+    font-size: 24px; /* Tamaño del título */
+    margin-bottom: 50px; /* Separación entre el título y los botones */
+    color: white; /* Color de texto blanco */
+    text-shadow: 0 0 10px rgba(255,255,255,0.7); /* Agregar un efecto de resplandor al texto */
+    border-radius: 50%; /* Hacer el contenedor redondo */
+    width: 300px; /* Ancho del elipse */
+    height: 150px; /* Altura del elipse */
+    line-height: 150px; /* Centrar verticalmente el texto */
+    background-color: pink; /* Color de fondo rosa para el elipse */
+    animation: glow 1.5s infinite alternate; /* Animación para el efecto fosforescente */
+  }
+
+  #botonSi, #botonNo {
+    font-size: 18px; /* Tamaño de los botones */
+    padding: 15px 30px; /* Espaciado interno de los botones */
+    margin: 20px; /* Margen entre los botones */
+    border: none;
+    border-radius: 10px;
+    background-color: pink; /* Color de fondo rosa para los botones */
+    color: white;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Agregar un efecto de resplandor al texto */
+    box-shadow: 0 0 10px rgba(255,255,255,0.5); /* Agregar un efecto de resplandor al botón */
+    animation: glow 1.5s infinite alternate; /* Animación para el efecto fosforescente */
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px pink,
+                  0 0 10px pink,
+                  0 0 15px pink,
+                  0 0 20px pink,
+                  0 0 25px pink,
+                  0 0 30px pink,
+                  0 0 35px pink;
+    }
+    to {
+      box-shadow: 0 0 10px pink,
+                  0 0 20px pink,
+                  0 0 30px pink,
+                  0 0 40px pink,
+                  0 0 50px pink,
+                  0 0 60px pink,
+                  0 0 70px pink;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="mensaje">¡ERES GAY!</div>
+<button id="botonNo" onclick="mostrarFraseBurlista()">No</button>
+<button id="botonSi" onclick="mostrarMensaje()">Sí</button>
+
+<script>
+  var frasesBurlistas = [
+    "No te vas a salvar de esta.",
+    "Yo sé que eres gay.",
+    "Sigues intentando negar que eres gay.",
+    "Qué bobo, acepta que eres gay.",
+    "No hay escapatoria, todos lo sabemos.",
+    "¿Cuántas veces vas a negarlo?",
+    "Tus acciones hablan más fuerte que tus palabras.",
+    "La verdad siempre sale a la luz, acepta quien eres."
+  ];
+
+  function mostrarFraseBurlista() {
+    var indice = Math.floor(Math.random() * frasesBurlistas.length);
+    document.getElementById("mensaje").innerHTML = "<span style='font-size: 18px;'>" + frasesBurlistas[indice] + "</span>";
+  }
+
+  function mostrarMensaje() {
+    document.getElementById("mensaje").innerHTML = "¡PUTO GAY!";
+    document.getElementById("mensaje").style.fontSize = "36px";
+    document.getElementById("botonSi").style.display = "none";
+    document.getElementById("botonNo").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
